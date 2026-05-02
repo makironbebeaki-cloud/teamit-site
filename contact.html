@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>お問い合わせ｜チームIT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">IT</span>
+      <span>
+        <span class="logo-text">チームIT</span>
+        <span class="logo-jp">Team IT</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">ホーム</a>
+      <a href="list.html">メンバーを探す</a>
+      <a href="contact.html" class="nav-cta active">無料で相談する</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="page-header">
+      <p class="breadcrumb"><a href="index.html">ホーム</a> / お問い合わせ</p>
+      <p class="section-label">— Contact</p>
+      <h1>まずは、<br>お話を聞かせてください。</h1>
+      <p class="page-desc">
+        専門用語はわからなくて大丈夫です。<br>
+        「こんなことで困っている」「こうなったらいいな」を、そのままの言葉でお書きください。
+      </p>
+    </div>
+
+    <!-- 簡易フォーム -->
+    <form class="contact-form" id="contact-form">
+      <div class="form-row">
+        <label>会社名(屋号) <span class="required">必須</span></label>
+        <input type="text" name="company" required placeholder="株式会社〇〇 / 屋号" />
+      </div>
+      <div class="form-row">
+        <label>お名前 <span class="required">必須</span></label>
+        <input type="text" name="name" required placeholder="山田 太郎" />
+      </div>
+      <div class="form-row">
+        <label>メールアドレス <span class="required">必須</span></label>
+        <input type="email" name="email" required placeholder="example@email.com" />
+      </div>
+      <div class="form-row">
+        <label>相談したいカテゴリー <span class="required">必須</span></label>
+        <select name="category" required>
+          <option value="">選んでください</option>
+          <option>ホームページ制作／LP制作</option>
+          <option>動画制作／映像コンテンツ制作</option>
+          <option>Webシステム開発</option>
+          <option>アプリ開発</option>
+          <option>IT・DX相談</option>
+          <option>その他</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>ご相談内容 <span class="required">必須</span></label>
+        <textarea name="message" rows="6" required placeholder="現在の状況、お困りごと、実現したいことなどを自由にご記入ください。"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">内容を送信する  →</button>
+      <p class="form-note">送信内容は、運営のRepStyle株式会社が確認のうえ、適切なメンバーへお繋ぎいたします。</p>
+    </form>
+
+    <!-- 送信完了メッセージ(デフォルトは非表示) -->
+    <div class="thank-you" id="thank-you" style="display:none;">
+      <p class="section-label">— Thank you</p>
+      <h2>送信ありがとうございました</h2>
+      <p>3営業日以内にご返信いたします。</p>
+      <a href="index.html" class="btn btn-secondary">ホームに戻る</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-logo">チームIT</p>
+    <p class="footer-text">中小企業のための、やさしいデジタル化支援チーム。</p>
+    <p class="footer-copy">© 2026 Team IT (operated by RepStyle Inc.)</p>
+  </div>
+</footer>
+
+<script>
+// 簡易フォーム送信(デモ用)
+// 本番では、第8章で説明したGoogleフォーム埋め込みか、
+// Apps Script のWeb APIに送信する実装に差し替えます
+document.getElementById('contact-form').addEventListener('submit', (e) => {
+  e.preventDefault();
+  document.getElementById('contact-form').style.display = 'none';
+  document.getElementById('thank-you').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>

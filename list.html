@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>メンバー一覧｜チームIT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<!-- PapaParse: CSVをJSONに変換するライブラリ -->
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">IT</span>
+      <span>
+        <span class="logo-text">チームIT</span>
+        <span class="logo-jp">Team IT</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">ホーム</a>
+      <a href="list.html" class="active">メンバーを探す</a>
+      <a href="contact.html" class="nav-cta">無料で相談する</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="page-header">
+      <p class="breadcrumb"><a href="index.html">ホーム</a> / メンバー一覧</p>
+      <h1 id="list-title">メンバー一覧</h1>
+      <p id="list-desc" class="page-desc">チームITに参加する、地域の頼れるIT専門家をご紹介します。</p>
+    </div>
+
+    <!-- 検索ボックス -->
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="🔍  キーワードで検索（会社名・特徴・地域 …）" />
+    </div>
+
+    <!-- カテゴリーフィルター -->
+    <div class="filter-bar">
+      <span class="filter-label">カテゴリー：</span>
+      <button class="filter-btn active" data-category="すべて">すべて</button>
+      <button class="filter-btn" data-category="ホームページ制作／LP制作">ホームページ制作／LP制作</button>
+      <button class="filter-btn" data-category="動画制作／映像コンテンツ制作">動画制作</button>
+      <button class="filter-btn" data-category="Webシステム開発">Webシステム開発</button>
+      <button class="filter-btn" data-category="アプリ開発">アプリ開発</button>
+      <button class="filter-btn" data-category="IT・DX相談">IT・DX相談</button>
+    </div>
+
+    <!-- 結果件数 -->
+    <p class="result-count" id="result-count"></p>
+
+    <!-- メンバーグリッド -->
+    <div class="members-grid" id="members-grid">
+      <!-- ロード中表示 -->
+      <p class="loading">読み込み中...</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-logo">チームIT</p>
+    <p class="footer-text">中小企業のための、やさしいデジタル化支援チーム。</p>
+    <p class="footer-copy">© 2026 Team IT (operated by RepStyle Inc.)</p>
+  </div>
+</footer>
+
+<!-- スクリプト読み込み -->
+<script src="js/data.js"></script>
+<script src="js/list.js"></script>
+
+</body>
+</html>

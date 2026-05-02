@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>メンバー詳細｜チームIT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">IT</span>
+      <span>
+        <span class="logo-text">チームIT</span>
+        <span class="logo-jp">Team IT</span>
+      </span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">ホーム</a>
+      <a href="list.html">メンバーを探す</a>
+      <a href="contact.html" class="nav-cta">無料で相談する</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="page-header">
+      <p class="breadcrumb">
+        <a href="index.html">ホーム</a> /
+        <a href="list.html">メンバー一覧</a> /
+        <span id="bc-name">読み込み中...</span>
+      </p>
+    </div>
+
+    <!-- ヒーロー -->
+    <div class="member-hero">
+      <span class="member-tag" id="md-tag">カテゴリー</span>
+      <h1 id="md-name">読み込み中...</h1>
+      <p class="member-tagline" id="md-tagline"></p>
+    </div>
+
+    <div class="member-detail">
+      <div class="member-main">
+        <!-- 基本情報 -->
+        <section class="md-section">
+          <h2>基本情報</h2>
+          <dl class="md-info" id="md-info"></dl>
+        </section>
+
+        <!-- 特徴・強み補足画像 -->
+        <section class="md-section" id="md-section-feature" style="display:none;">
+          <h2>特徴・強み</h2>
+          <p id="md-feature-text"></p>
+          <div class="md-img-wrap" id="md-feature-img-wrap" style="display:none;">
+            <img id="md-feature-img" alt="特徴・強み" />
+          </div>
+        </section>
+
+        <!-- 事業内容 -->
+        <section class="md-section" id="md-section-service" style="display:none;">
+          <h2>具体的な事業内容</h2>
+          <p id="md-service-text"></p>
+          <div class="md-img-wrap" id="md-service-img-wrap" style="display:none;">
+            <img id="md-service-img" alt="事業内容" />
+          </div>
+        </section>
+
+        <!-- アピールポイント -->
+        <section class="md-section" id="md-section-appeal" style="display:none;">
+          <h2>アピールポイント・差別化要因</h2>
+          <p id="md-appeal-text"></p>
+          <div class="md-img-wrap" id="md-appeal-img-wrap" style="display:none;">
+            <img id="md-appeal-img" alt="アピールポイント" />
+          </div>
+        </section>
+      </div>
+
+      <!-- サイドバー -->
+      <aside class="member-aside">
+        <h3>このメンバーに相談する</h3>
+        <p>RepStyleが窓口となり、ご相談を承ります。</p>
+        <a href="contact.html" class="btn btn-primary btn-block">無料で相談する</a>
+        <a href="list.html" class="btn btn-secondary btn-block">他のメンバーを見る</a>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-logo">チームIT</p>
+    <p class="footer-text">中小企業のための、やさしいデジタル化支援チーム。</p>
+    <p class="footer-copy">© 2026 Team IT (operated by RepStyle Inc.)</p>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/member.js"></script>
+
+</body>
+</html>
