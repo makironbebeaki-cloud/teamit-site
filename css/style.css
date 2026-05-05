@@ -205,6 +205,57 @@ button { font-family: inherit; cursor: pointer; }
 .hero {
   padding: 80px 0 60px;
   position: relative;
+  overflow: hidden;
+}
+
+/* FV専用: 動く光のグラデーションを強調 */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at var(--hx1, 15%) var(--hy1, 25%), rgba(74,127,181,.28), transparent 40%),
+    radial-gradient(circle at var(--hx2, 85%) var(--hy2, 75%), rgba(217,119,87,.22), transparent 40%),
+    radial-gradient(circle at var(--hx3, 70%) var(--hy3, 15%), rgba(122,155,126,.18), transparent 35%),
+    radial-gradient(circle at var(--hx4, 25%) var(--hy4, 85%), rgba(207,220,236,.5), transparent 35%);
+  pointer-events: none;
+  z-index: 0;
+  animation: heroBlobMove 18s ease-in-out infinite;
+}
+
+@keyframes heroBlobMove {
+  0%, 100% {
+    --hx1: 15%;  --hy1: 25%;
+    --hx2: 85%;  --hy2: 75%;
+    --hx3: 70%;  --hy3: 15%;
+    --hx4: 25%;  --hy4: 85%;
+  }
+  33% {
+    --hx1: 35%;  --hy1: 55%;
+    --hx2: 65%;  --hy2: 45%;
+    --hx3: 45%;  --hy3: 35%;
+    --hx4: 55%;  --hy4: 65%;
+  }
+  66% {
+    --hx1: 55%;  --hy1: 45%;
+    --hx2: 45%;  --hy2: 55%;
+    --hx3: 25%;  --hy3: 55%;
+    --hx4: 75%;  --hy4: 35%;
+  }
+}
+
+@property --hx1 { syntax: '<percentage>'; initial-value: 15%; inherits: false; }
+@property --hy1 { syntax: '<percentage>'; initial-value: 25%; inherits: false; }
+@property --hx2 { syntax: '<percentage>'; initial-value: 85%; inherits: false; }
+@property --hy2 { syntax: '<percentage>'; initial-value: 75%; inherits: false; }
+@property --hx3 { syntax: '<percentage>'; initial-value: 70%; inherits: false; }
+@property --hy3 { syntax: '<percentage>'; initial-value: 15%; inherits: false; }
+@property --hx4 { syntax: '<percentage>'; initial-value: 25%; inherits: false; }
+@property --hy4 { syntax: '<percentage>'; initial-value: 85%; inherits: false; }
+
+.hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-grid {
