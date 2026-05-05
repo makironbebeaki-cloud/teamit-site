@@ -7,7 +7,7 @@
  * 'sample'  ... サンプルデータで動かす（最初はこちら）
  * 'sheet'   ... Googleスプレッドシートから取得
  */
-const DATA_MODE = 'sample';
+const DATA_MODE = 'sheet';
 
 /**
  * Googleスプレッドシートの公開URL
@@ -19,7 +19,7 @@ const DATA_MODE = 'sample';
  * 3) 公開対象のシートを選び、形式を「カンマ区切り形式 (.csv)」にする
  * 4) 公開ボタンを押し、発行されたURLをここに貼り付け
  */
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/YOUR_SHEET_ID/pub?output=csv';
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSbt_OkC6qzlwZ0kV8i0wNF8eNH1CU0wc5nGyD5qd-AXxGTMQQXsnt9aBXxV9Yn1pud176ZPiQJJtqz/pub?gid=0&single=true&output=csv';
 
 
 /**
